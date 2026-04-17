@@ -336,6 +336,8 @@ def replace_with_rank(arr):
     return result
 
 
+# Sorting elements of an array by frequency
+
 def sort_by_frequency(arr):
     freq = {}
 
@@ -350,4 +352,39 @@ def sort_by_frequency(arr):
     arr.sort(key=lambda x: (-freq[x], x))
 
     return arr
+
+
+# Search an Element in an Array : Program CPP Java
+
+def search_element(arr, k):
+    for i in range(len(arr)):
+        if arr[i] == k:
+            return i
+    return -1
+
+
+# Check if array is subset of another array
+
+def is_subset(arr1, arr2):
+    set2 = set(arr2)
+
+    for num in arr1:
+        if num not in set2:
+            return False
+    return True
+
+
+# Finding Equilibrium index in an array
+
+def equilibrium_index(nums):
+    left_sum = 0
+    right_sum = sum(nums)
+
+    for i in range(len(nums)):
+        right_sum -= nums[i]
+        if left_sum == right_sum:
+            return i
+        left_sum += nums[i]
+    return -1
+
 
